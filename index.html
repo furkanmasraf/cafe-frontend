@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Table Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cafe Management System</h1>
+
+  <section>
+    <h2>Add Menu Item</h2>
+    <input type="text" id="itemName" placeholder="Item name">
+    <input type="number" id="itemPrice" placeholder="Item price">
+    <button onclick="addMenuItem()">Add Menu Item</button>
+    <ul id="menuItems"></ul>
+  </section>
+
+  <section>
+    <h2>Add Table</h2>
+    <input type="text" id="tableNumber" placeholder="Table Number">
+    <select id="tableStatus">
+      <option value="available">Available</option>
+      <option value="occupied">Occupied</option>
+    </select>
+    <button onclick="addTable()">Add Table</button>
+    <ul id="tableList"></ul>
+  </section>
+
+  <section>
+    <h2>Create Order</h2>
+    <input type="number" id="orderTableId" placeholder="Table ID">
+    <input type="number" id="orderTotalPrice" placeholder="Total Price">
+    <button onclick="createOrder()">Create Order</button>
+    <ul id="orderList"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

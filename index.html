@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cafe Table Management</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kafe Yönetim Sistemi</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Cafe Management System</h1>
+  <h1>Kafe Yönetim Sistemi</h1>
 
   <section>
-    <h2>Add Menu Item</h2>
-    <input type="text" id="itemName" placeholder="Item name">
-    <input type="number" id="itemPrice" placeholder="Item price">
-    <button onclick="addMenuItem()">Add Menu Item</button>
+    <h2>Ürün Ekle</h2>
+    <input type="text" id="itemName" placeholder="Ürün İsmi" />
+    <input type="number" id="itemPrice" placeholder="Ürün Fiyatı (TL)" />
+    <button onclick="addMenuItem()">Ürün Ekle</button>
     <ul id="menuItems"></ul>
   </section>
 
   <section>
-    <h2>Add Table</h2>
-    <input type="text" id="tableNumber" placeholder="Table Number">
+    <h2>Masa Ekle</h2>
+    <input type="text" id="tableNumber" placeholder="Masa Numarası" />
     <select id="tableStatus">
-      <option value="available">Available</option>
-      <option value="occupied">Occupied</option>
+      <option value="available">Boş</option>
+      <option value="occupied">Dolu</option>
     </select>
-    <button onclick="addTable()">Add Table</button>
-    <ul id="tableList"></ul>
+    <button onclick="addTable()">Masa Ekle</button>
+
+    <div id="tableGrid" class="grid"></div>
   </section>
 
   <section>
-    <h2>Create Order</h2>
-    <input type="number" id="orderTableId" placeholder="Table ID">
-    <input type="number" id="orderTotalPrice" placeholder="Total Price">
-    <button onclick="createOrder()">Create Order</button>
+    <h2>Sipariş Oluştur</h2>
+
+    <label for="productSelect">Ürün Seç:</label>
+    <select id="productSelect" onchange="updatePrice()">
+      <option value="" data-price="0">Ürün Seçiniz</option>
+    </select>
+
+    <input type="number" id="productPrice" placeholder="Fiyat" readonly />
+
+    <input type="number" id="orderTableId" placeholder="Masa Numarası" />
+
+    <button onclick="addOrderWithProduct()">Sipariş Ekle</button>
+
     <ul id="orderList"></ul>
   </section>
 

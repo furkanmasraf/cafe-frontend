@@ -8,40 +8,34 @@
 </head>
 <body>
   <h1>Kafe Yönetim Sistemi</h1>
-
   <section>
-    <h2>Ürün Ekle</h2>
-    <input type="text" id="itemName" placeholder="Ürün İsmi" />
-    <input type="number" id="itemPrice" placeholder="Ürün Fiyatı (TL)" />
-    <button onclick="addMenuItem()">Ürün Ekle</button>
-    <ul id="menuItems"></ul>
-  </section>
-
-  <section>
-    <h2>Masa Ekle</h2>
-    <input type="text" id="tableNumber" placeholder="Masa Numarası" />
-    <select id="tableStatus">
+    <select id="tableStatus" >
+      <option value="Masa Numarası">Masa Numarasını Seç</option>
+      
       <option value="available">Boş</option>
       <option value="occupied">Dolu</option>
+      <option value="Masa">1</option>
+       <option value="Masa">2</option>
+        <option value="Masa">3</option>
+      
     </select>
-    <button onclick="addTable()">Masa Ekle</button>
+     <button id="MasaEkle" onclick="addTable()" >Masa Ekle</button>
 
+   
     <div id="tableGrid" class="grid"></div>
   </section>
 
   <section>
     <h2>Sipariş Oluştur</h2>
-
-    <label for="productSelect">Ürün Seç:</label>
     <select id="productSelect" onchange="updatePrice()">
       <option value="" data-price="0">Ürün Seçiniz</option>
+      <option value=""data-price="150">filtre kahve</option>
+      <option value=""data-price="210">Tramisu</option>
     </select>
 
-    <input type="number" id="productPrice" placeholder="Fiyat" readonly />
+    <input type="number" id="productPrice" placeholder="Toplam Fiyatı" readonly />
 
-    <input type="number" id="orderTableId" placeholder="Masa Numarası" />
-
-    <button onclick="addOrderWithProduct()">Sipariş Ekle</button>
+    <button id="ToplamHesap" onclick="addOrderWithProduct()" >Toplam Hesap</button>
 
     <ul id="orderList"></ul>
   </section>

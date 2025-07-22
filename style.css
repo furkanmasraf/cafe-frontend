@@ -43,8 +43,7 @@ section ul {
   position:absolute;
   margin-left:43%;
   background-color: #bfc6e0;
-  
-}
+  }
 #productSelect {
   font-size: 20px;
   padding: 15px,40px;
@@ -66,7 +65,7 @@ button  {
   background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -80,11 +79,11 @@ section button  {
    background-color: #4577a0;
 }
   #MasaEkle{
-  margin-right: 38%;
- }
+  margin-right: 15%
+    }
  #ToplamHesap{
-   margin-right: 38%;
- }
+   margin-right: 14%
+  }
 
 /* Buton hover efekti */
 

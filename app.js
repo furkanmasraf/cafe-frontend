@@ -1,6 +1,5 @@
 const backendUrl = "http://localhost:8080";
 
-// Sayfa yüklendiğinde ürünleri, siparişleri ve masaları yükle
 window.onload = () => {
   loadProductsForSelect();
   fetchOrders();
@@ -12,12 +11,12 @@ function loadProductsForSelect() {
     .then(response => response.json())
     .then(products => {
       const select = document.getElementById("productSelect");
-      select.innerHTML = ""; // Önceki ürünleri temizle
+      select.innerHTML = "";
 
       products.forEach(product => {
         const option = document.createElement("option");
         option.value = product.id;
-        option.textContent = `${product.name} - ${product.price}₺`;
+        option.textContent = product.name + " - " + product.price + "₺";
         option.setAttribute("data-price", product.price);
         select.appendChild(option);
       });
@@ -38,6 +37,7 @@ function updatePrice() {
 function addOrderWithProduct() {
   const select = document.getElementById("productSelect");
   const selectedProductIds = Array.from(select.selectedOptions).map(option => option.value);
+  const selectedProductNames = Array.from(select.selectedOptions).map(option => option.textContent);
   const totalPrice = parseFloat(document.getElementById("productPrice").value);
   const tableId = prompt("Masa numarasını giriniz:");
 
@@ -87,11 +87,41 @@ function addTable() {
   });
 }
 
-// Placeholder fonksiyonlar
 function fetchOrders() {
-  console.log("Siparişler yüklenecek...");
+  fetch(`${backendUrl}/orders`)
+    .then(res => res.json())
+    .then(orders => {
+      const tbody = document.querySelector("#orderTable tbody");
+      tbody.innerHTML = "";
+
+      orders.forEach(order => {
+        const tr = document.createElement("tr");
+        const products = order.products.map(p => p.name).join(", ");
+
+        tr.innerHTML = `
+          <td>${order.tableId}</td>
+          <td>${products}</td>
+          <td>${order.totalPrice.toFixed(2)}₺</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
 }
 
 function fetchTables() {
-  console.log("Masalar yüklenecek...");
+  fetch(`${backendUrl}/tables`)
+    .then(res => res.json())
+    .then(tables => {
+      const tbody = document.querySelector("#tableList tbody");
+      tbody.innerHTML = "";
+
+      tables.forEach(table => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${table.tableNumber}</td>
+          <td>${table.status === "available" ? "Boş" : "Dolu"}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
 }

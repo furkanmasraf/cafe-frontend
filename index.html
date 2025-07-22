@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kafe Yönetim Sistemi</title>
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
   <h1>Kafe Yönetim Sistemi</h1>
 
-  <!-- Sipariş Listesi -->
-  <section class="section" id="orderListSection">
-    <h2>Ürünlerimiz</h2>
-    <table id="orderTable">
-      <thead>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </section>
-
+  
   <!-- Masa Listesi -->
   <section class="section" id="tableListSection">
     <h2>Masalar</h2>
-    <table id="tableList">
-      <thead>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="masalar-container">
+      <div class="masa-kutu">Masa 1</div>
+      <div class="masa-kutu">Masa 2</div>
+      <div class="masa-kutu">Masa 3</div>
+      <div class="masa-kutu">Masa 4</div>
+      <div class="masa-kutu">Masa 5</div>
+      <div class="masa-kutu">Masa 6</div>
+    </div>
   </section>
 
   <!-- Masa Ekle -->
@@ -53,9 +48,8 @@
     <h2>Sipariş Oluştur</h2>
     <select id="productSelect" onchange="updatePrice()">
       <option value="" data-price="0">Ürün Seçiniz</option>
-      <option value=""data-price="150">filtre kahve</option>
-      <option value=""data-price="210">Tramisu</option>
-      <!-- JS ile doldurulacak -->
+      <option value="1" data-price="150">Filtre Kahve</option>
+      <option value="2" data-price="210">Tramisu</option>
     </select>
 
     <input type="text" id="productPrice" readonly placeholder="Toplam Fiyat" />
@@ -63,6 +57,4 @@
     <button onclick="addOrderWithProduct()">Toplam Hesap</button>
   </section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <script>

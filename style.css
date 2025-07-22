@@ -1,90 +1,42 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f1eeea;
+  background-color: #f2eeea;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 40px;
+  margin: 20px 0;
+  color: #333;
 }
 
-section {
-  background-color: #abb8e6;
-  padding: 30px;
+.section {
+  background-color: #abbcf3;
+  padding: 20px;
+  margin: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  position: relative; /* Butonu bu kutunun içinde konumlandırmak için */
-  padding-bottom: 60px; /* Butonun kutudan taşmaması için boşluk bırakır */
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Ortalanacak form elemanları */
-section input,
-section select,
-section label,
-section ul {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-bottom: 20px;
-}
-#tableStatus {
-  font-size: 17,5px;
-  padding: 15px,40px;
-  height: 45px;
-  width: 175px;
-  position:absolute;
-  margin-left:43%;
-  background-color: #bfc6e0;
-  
-}
-#productSelect {
-  font-size: 20px;
-  padding: 15px,40px;
-  height: 45px;
-  width: 175px;
-   background-color: #bfc6e0;
-}
-#productPrice{
-  font-size: 20px;
-  padding: 15px,20px;
-  height: 45px;
-  width: 175px;
-  background-color: #bfc6e0;
-}
-
-/* Tüm butonlar için stil */
-button  {
-  padding: 8px,16px;
-  background-color: #4CAF50;
-  color: white;
+select, input, button {
+  padding: 10px 20px;
+  margin: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+select {
+  min-width: 200px;
+  height: 120px; /* Çoklu seçim için daha yüksek */
+}
+
+button {
+  background-color: #4c8caf;
+  color: white;
   cursor: pointer;
 }
 
-/* Butonları ait olduğu kutunun sağ altına yerleştir */
-section button  {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  height: 40px;
-  width: 80px;
-   background-color: #4577a0;
+button:hover {
+  background-color: #366b87;
 }
-  #MasaEkle{
-  margin-right: 38%;
- }
- #ToplamHesap{
-   margin-right: 38%;
- }
-
-/* Buton hover efekti */
-

@@ -16,57 +16,23 @@ h1 {
   padding: 20px;
   margin: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  position: relative; /* Butonu bu kutunun içinde konumlandırmak için */
-  padding-bottom: 60px; /* Butonun kutudan taşmaması için boşluk bırakır */
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+select, input, button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-/* Ortalanacak form elemanları */
-section input,
-section select,
-section label,
-section ul {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-bottom: 20px;
-}
-#tableStatus {
-  font-size: 17,5px;
-  padding: 15px,40px;
-  height: 45px;
-  width: 175px;
-  position:absolute;
-  margin-left:43%;
-  background-color: #bfc6e0;
-  
-}
-#productSelect {
-  font-size: 20px;
-  padding: 15px,40px;
-  height: 45px;
-  width: 175px;
-   background-color: #bfc6e0;
-}
-#productPrice{
-  font-size: 20px;
-  padding: 15px,20px;
-  height: 45px;
-  width: 175px;
-  background-color: #bfc6e0;
+select {
+  min-width: 200px;
+  height: 120px; /* Çoklu seçim için daha yüksek */
 }
 
-/* Tüm butonlar için stil */
-button  {
-  padding: 8px,16px;
-  background-color: #4CAF50;
+button {
+  background-color: #4c8caf;
   color: white;
   border: none;
   border-radius: 10px;
@@ -76,12 +42,3 @@ button  {
 button:hover {
   background-color: #366b87;
 }
-  #MasaEkle{
-  margin-right: 38%;
- }
- #ToplamHesap{
-   margin-right: 38%;
- }
-
-/* Buton hover efekti */
-
